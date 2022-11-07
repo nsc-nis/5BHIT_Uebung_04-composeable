@@ -1,15 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 in CodeSandbox!" />
+  <div id="app">
+    <img alt="Vue logo" src="https://vuejs.org/images/logo.png" />
+    <UserList />
+  </div>
 </template>
 
 <script>
-import HelloWorldVue from "./components/HelloWorld.vue";
+import UserList from "./components/UserList.vue";
+
 export default {
   name: "App",
   components: {
-    HelloWorld: HelloWorldVue,
-  },
+    UserList
+  }
 };
 </script>
 
