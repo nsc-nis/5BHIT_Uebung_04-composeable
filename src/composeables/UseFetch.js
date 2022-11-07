@@ -20,6 +20,7 @@ export function useFetch(url, options) {
     }
   };
   fetchData();
+  console.log("data: " + data.value);
 
   return { data, ...toRefs(state) };
 }
