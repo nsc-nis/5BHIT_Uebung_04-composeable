@@ -22,9 +22,7 @@
             <td>{{ item.username }}</td>
             <td>
               {{ item.address.street }}, {{ item.address.suite }} -
-              {{ item.address.zipcode }} {{ item.address.city }} ({{
-                item.address.geo.lat
-              }}, {{ item.address.geo.lng }})
+              {{ item.address.zipcode }} {{ item.address.city }}
             </td>
           </tr>
         </tbody>
@@ -72,7 +70,7 @@ th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #04aa6d;
+  background-color: #41b883;
   color: white;
 }
 </style>
