@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import UserList from "./components/UserList.vue";
+import UserList from './components/UserList.vue';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    UserList
-  }
+    UserList,
+  },
 };
 </script>
 
@@ -24,5 +24,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+img {
+  width: 5em;
 }
 </style>
