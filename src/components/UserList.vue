@@ -13,12 +13,17 @@
           <tr>
             <th>Name</th>
             <th>UserName</th>
+            <th>Address</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in data">
             <td>{{ item.name }}</td>
             <td>{{ item.username }}</td>
+            <td>
+              {{ item.address.street }}, {{ item.address.suite }} -
+              {{ item.address.zipcode }} {{ item.address.city }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -44,4 +49,28 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+tr {
+  background-color: #f2f2f2;
+}
+tr:hover {
+  background-color: #ddd;
+}
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #41b883;
+  color: white;
+}
+</style>
