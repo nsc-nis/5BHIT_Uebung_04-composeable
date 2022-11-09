@@ -20,7 +20,12 @@
           <tr v-for="item in data">
             <td>{{ item.name }}</td>
             <td>{{ item.username }}</td>
-            <td>{{ item.address }}</td>
+            <td>
+              {{ item.address.street }}, {{ item.address.suite }} -
+              {{ item.address.zipcode }} {{ item.address.city }} ({{
+                item.address.geo.lat
+              }}, {{ item.address.geo.lng }})
+            </td>
           </tr>
         </tbody>
       </table>
