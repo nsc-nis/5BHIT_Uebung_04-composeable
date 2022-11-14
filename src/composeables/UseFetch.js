@@ -13,7 +13,6 @@ export function useFetch(url, options) {
       console.log('... Fetching data ...');
       const res = await fetch(url, options);
       data.value = await res.json();
-      
     } catch (e) {
       state.error = e;
     } finally {

@@ -11,19 +11,24 @@
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>UserName</th>
-            <th>Address</th>
+            <th>User ID</th>
+            <th>Index</th>
+            <th>Title</th>
+            <th>Body</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in data">
-            <td>{{ item.name }}</td>
-            <td>{{ item.username }}</td>
-            <td>
-              {{ item.address.street }}, {{ item.address.suite }} -
-              {{ item.address.zipcode }} {{ item.address.city }}
+          <tr v-for="(item, index) in data">
+            <td v-if="index - 1 >= 0 && data[index - 1].userId != item.userId">
+              {{ item.userId }}
             </td>
+            <td v-else-if="index - 1 < 0">
+              {{ item.userId }}
+            </td>
+            <td v-else></td>
+            <td>{{ item.id }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.body }}</td>
           </tr>
         </tbody>
       </table>
@@ -32,20 +37,34 @@
 </template>
 
 <script>
-import { useFetch } from "../composeables/UseFetch.js";
+import { useFetch } from '../composeables/UseFetch.js';
 export default {
   setup() {
+    console.log('Start fetch');
     const { data, error, loading } = useFetch(
-      "https://jsonplaceholder.typicode.com/users",
+      'https://jsonplaceholder.typicode.com/posts',
       {}
     );
+    console.log('End fetch');
+
+    /*
+    let lastUser = 0;
+    for (let item in data) {
+      if (item.userId == lastUser) {
+        item.userId = ' ';
+      } else {
+        lastUser = item.userId;
+      }
+    }
+    */
+
     console.log(data.value);
     return {
       data,
       error,
-      loading
+      loading,
     };
-  }
+  },
 };
 </script>
 
